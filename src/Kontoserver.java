@@ -10,7 +10,7 @@ public class Kontoserver
 		KontoImpl k = new KontoImpl();
 		System.setProperty("java.rmi.server.hostname", "dist.saluton.dk");
 		Naming.rebind("rmi://dist.saluton.dk:7822/kontotjeneste", k);
-		System.out.println("Kontotjeneste registreret.");
+		System.out.println("Kontotjeneste registreret magnus.");
 		//k.overførsel(117);
 		//k.overførsel(1023);
 	}
