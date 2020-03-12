@@ -3,12 +3,15 @@ import java.util.ArrayList;
 
 public class Kontoklient
 {
+	public static int PORT = 1099;
 	public static void main(String[] arg) throws Exception
 	{
 		Thread.sleep(500);
-		KontoI k =(KontoI) Naming.lookup("rmi://dist.saluton.dk:7822/kontotjeneste");
+		KontoI k =(KontoI) Naming.lookup("rmi://dist.saluton.dk:"+PORT+"/kontotjeneste");
 
-    	k.overførsel(100);
+		//KontoI k =(KontoI) Naming.lookup("rmi://localhost:"+PORT+"/kontotjeneste");
+
+		k.overførsel(100);
     	k.overførsel(50);
 		System.out.println( "Saldo er: "+ k.saldo() );
 		k.overførsel(-150);

@@ -2,17 +2,23 @@ import java.rmi.Naming;
 
 public class Kontoserver
 {
+	private static int PORT = 1099;
 	public static void main(String[] arg) throws Exception
 	{
 		// Enten: Kør programmet 'rmiregistry' fra mappen med .class-filerne, eller:
-		java.rmi.registry.LocateRegistry.createRegistry(7822); // start i server-JVM
-
+		java.rmi.registry.LocateRegistry.createRegistry(PORT); // start i server-JVM
 		KontoImpl k = new KontoImpl();
+
+		//Naming.rebind("rmi://localhost:"+PORT+"/kontotjeneste", k);
+
 		System.setProperty("java.rmi.server.hostname", "dist.saluton.dk");
-		Naming.rebind("rmi://dist.saluton.dk:7822/kontotjeneste", k);
-		System.out.println("Kontotjeneste registreret magnus.");
+		Naming.rebind("rmi://dist.saluton.dk:"+PORT+"/kontotjeneste", k);
+
+		System.out.println("Kontotjeneste registreret magn.");
 		//k.overførsel(117);
 		//k.overførsel(1023);
+
+
 	}
 }
 /*
