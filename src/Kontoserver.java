@@ -5,11 +5,11 @@ public class Kontoserver
 	public static void main(String[] arg) throws Exception
 	{
 		// Enten: Kør programmet 'rmiregistry' fra mappen med .class-filerne, eller:
-		java.rmi.registry.LocateRegistry.createRegistry(1099); // start i server-JVM
+		java.rmi.registry.LocateRegistry.createRegistry(7822); // start i server-JVM
 
 		KontoImpl k = new KontoImpl();
 		System.setProperty("java.rmi.server.hostname", "dist.saluton.dk");
-		Naming.rebind("rmi://dist.saluton.dk:1099/kontotjeneste", k);
+		Naming.rebind("rmi://dist.saluton.dk:7822/kontotjeneste", k);
 		System.out.println("Kontotjeneste registreret.");
 		//k.overførsel(117);
 		//k.overførsel(1023);

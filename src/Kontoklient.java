@@ -6,9 +6,10 @@ public class Kontoklient
 	public static void main(String[] arg) throws Exception
 	{
 		Thread.sleep(500);
-		KontoI k =(KontoI) Naming.lookup("rmi://dist.saluton.dk:1099/kontotjeneste");
-    k.overførsel(100);
-    k.overførsel(50);
+		KontoI k =(KontoI) Naming.lookup("rmi://dist.saluton.dk:7822/kontotjeneste");
+
+    	k.overførsel(100);
+    	k.overførsel(50);
 		System.out.println( "Saldo er: "+ k.saldo() );
 		k.overførsel(-150);
 		System.out.println( "Saldo ved slut er: "+ k.saldo() );
