@@ -3,7 +3,8 @@ import java.util.ArrayList;
 
 public class Kontoklient
 {
-	public static int PORT = 1099;
+	public static int PORT = 1097;
+
 	public static void main(String[] arg) throws Exception
 	{
 		Thread.sleep(500);

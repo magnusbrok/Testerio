@@ -2,7 +2,7 @@ import java.rmi.Naming;
 
 public class Kontoserver
 {
-	private static int PORT = 1099;
+	private static int PORT = 1097;
 	public static void main(String[] arg) throws Exception
 	{
 		System.setProperty("java.rmi.server.hostname", "dist.saluton.dk");
